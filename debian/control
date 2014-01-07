@@ -1,0 +1,27 @@
+Source: pam-8021x
+Section: libs
+Priority: extra
+Maintainer: Enrique Hernández Bello <ehbello@gmail.com>
+Build-Depends: debhelper (>= 9),
+               libpam0g-dev | libpam-dev,
+               libglib2.0-dev,
+               libdbus-1-dev,
+               libdbus-glib-1-dev,
+               libnm-util-dev,
+               network-manager-dev,
+               dh-autoreconf
+Standards-Version: 3.9.4
+Homepage: https://github.com/ehbello/pam-8021x
+
+Package: libpam-8021x
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         libpam-runtime
+Suggests: libpam-mklocaluser,
+          libpam-alreadyloggedin
+Description: Pluggable Authentication Module for 802.1x authentication protocol
+ This package provides an interface between a device configured with 802.1x
+ authentication protocol and the PAM user authentication system. Using it along
+ with NetworkManager checks the authentication creating necessary system
+ connection that allows get into network.

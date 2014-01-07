@@ -1,0 +1,20 @@
+ pam_8021x authentication PAM module
+=====================================
+
+This is the PAM to 802.1x protocol authentication module.  It allows any
+Linux machine to become a 802.1x client for authentication.
+
+This module talks with NetworkManager daemon sending messages trough D-BUS
+system to get authentication with 802.1x protocol.
+
+This first version only creates the needed network connection for a
+specific 802.1x configuration with PEAP/MSCHAPv2 authentication. It still
+does not check if authentication success.
+
+Any questions can be directed to:
+
+- Enrique Hernández Bello (ehbello@gmail.com)
+
+For the latest code updates, see the homepage at:
+
+- https://github.com/ehbello/pam-8021x
