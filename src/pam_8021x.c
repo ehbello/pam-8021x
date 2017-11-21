@@ -175,13 +175,6 @@ pam_sm_authenticate (pam_handle_t *pamh, int flags, int argc, const char **argv)
     }
   }
 
-  /* Initialize GType system */
-  if (debug)
-  {
-    pam_syslog (pamh, LOG_INFO, "Initializing GType system.");
-  }
-  g_type_init();
-
   /* Get system bus */
   if (debug)
   {
