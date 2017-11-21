@@ -23,9 +23,11 @@
 #define PAM_SM_AUTH
 
 #include <security/pam_modules.h>
+#include <security/pam_ext.h>
 
 #include <syslog.h>
 #include <config.h>
+#include <string.h>
 
 #include <glib.h>
 #include <dbus/dbus.h>
@@ -230,7 +232,7 @@ pam_sm_authenticate (pam_handle_t *pamh, int flags, int argc, const char **argv)
 
   if (authtok == NULL)
   {
-    if (pam_prompt (pamh, PAM_PROMPT_ECHO_OFF, &authtok, "Password:") != PAM_SUCCESS)
+    if (pam_prompt (pamh, PAM_PROMPT_ECHO_OFF, (char **)&authtok, "Password:") != PAM_SUCCESS)
     {
       pam_syslog (pamh, LOG_ERR, "Couldn't obtain password from pam_prompt.");
       return PAM_AUTHINFO_UNAVAIL;
