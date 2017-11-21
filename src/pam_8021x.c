@@ -160,7 +160,7 @@ pam_sm_authenticate (pam_handle_t *pamh, int flags, int argc, const char **argv)
 
   GError *error;
 
-  gboolean login_ok = TRUE;
+  //gboolean login_ok = TRUE;
 
   for (; argc-- > 0; ++argv)
   {
